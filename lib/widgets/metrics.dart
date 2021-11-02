@@ -17,7 +17,29 @@ class _MetricsState extends State<Metrics> {
   @override
   Widget build(BuildContext context) {
     return Container(
-
+      height: bubbleDiameter.toDouble(),
+      decoration: bubbleBoxDecoration,
+      padding: new EdgeInsets.all(25.0),
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget> [
+            Text(
+              'Upper Body',
+              style: labelTextStyle,
+            ),
+            Text(
+              '45',
+              style: weightTextStyle,
+            ),
+            Text(
+              'lbs',
+              style: unitTextStyle,
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
+
