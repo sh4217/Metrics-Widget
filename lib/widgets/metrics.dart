@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 // import 'package:metrics_widget/assets/graph.svg';
-import 'package:metrics_widget/assets/styles.dart';
+import 'package:metrics_widget/styles/styles.dart';
+
+const String assetName = 'assets/graph.svg';
 
 class Metrics extends StatefulWidget {
   const Metrics({Key? key}) : super(key: key);
@@ -12,8 +14,6 @@ class Metrics extends StatefulWidget {
 
 class _MetricsState extends State<Metrics> {
 
-  final String assetName = 'assets/graph.svg';
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,20 +21,25 @@ class _MetricsState extends State<Metrics> {
       decoration: bubbleBoxDecoration,
       padding: new EdgeInsets.all(25.0),
       child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        child: Stack(
           children: <Widget> [
-            Text(
-              'Upper Body',
-              style: labelTextStyle,
-            ),
-            Text(
-              '45',
-              style: weightTextStyle,
-            ),
-            Text(
-              'lbs',
-              style: unitTextStyle,
+            SvgPicture.asset('assets/graph.svg'),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget> [
+                Text(
+                  'Upper Body',
+                  style: labelTextStyle,
+                ),
+                Text(
+                  '45',
+                  style: weightTextStyle,
+                ),
+                Text(
+                  'lbs',
+                  style: unitTextStyle,
+                ),
+              ],
             ),
           ],
         ),
