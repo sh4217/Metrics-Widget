@@ -23,23 +23,31 @@ class _MetricsState extends State<Metrics> {
       child: Center(
         child: Stack(
           children: <Widget> [
-            SvgPicture.asset('assets/graph.svg'),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget> [
-                Text(
-                  'Upper Body',
-                  style: labelTextStyle,
-                ),
-                Text(
-                  '45',
-                  style: weightTextStyle,
-                ),
-                Text(
-                  'lbs',
-                  style: unitTextStyle,
-                ),
-              ],
+            Positioned(
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: SvgPicture.asset('assets/graph.svg'),
+              ),
+            ),
+
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget> [
+                  Text(
+                    'Upper Body',
+                    style: labelTextStyle,
+                  ),
+                  Text(
+                    '45',
+                    style: weightTextStyle,
+                  ),
+                  Text(
+                    'lbs',
+                    style: unitTextStyle,
+                  ),
+                ],
+              ),
             ),
           ],
         ),
