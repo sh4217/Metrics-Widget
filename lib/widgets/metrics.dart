@@ -5,54 +5,69 @@ import 'package:metrics_widget/styles/styles.dart';
 
 const String assetName = 'assets/graph.svg';
 
-class Metrics extends StatefulWidget {
-  const Metrics({Key? key}) : super(key: key);
+
+// class Metrics extends StatefulWidget {
+//
+//   const Metrics({Key? key}) : super(key: key);
+//
+//   @override
+//   _MetricsState createState() => _MetricsState();
+// }
+//
+// class _MetricsState extends State<Metrics> {
+//
+//   var body = 'Upper Body';
+//   var weight = '45';
+
+class Metrics extends StatelessWidget {
+
+  final String body;
+  final String weight;
+
+  Metrics(this.body, this.weight);
 
   @override
-  _MetricsState createState() => _MetricsState();
-}
-
-class _MetricsState extends State<Metrics> {
-
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context ) {
     return Container(
       height: bubbleDiameter.toDouble(),
+      width: bubbleDiameter.toDouble(),
       decoration: bubbleBoxDecoration,
-      padding: new EdgeInsets.all(25.0),
-      child: Center(
-        child: Stack(
-          children: <Widget> [
-            Positioned(
-              child: Align(
-                alignment: Alignment.bottomCenter,
-                child: SvgPicture.asset('assets/graph.svg'),
-              ),
+      padding: new EdgeInsets.fromLTRB(0, 35, 0, 0),
+      child: Stack(
+        children: <Widget>[
+          Positioned(
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: SvgPicture.asset('assets/graph.svg'),
             ),
+          ),
+          Center(
+            child: Column(
 
-            Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget> [
-                  Text(
-                    'Upper Body',
-                    style: labelTextStyle,
-                  ),
-                  Text(
-                    '45',
-                    style: weightTextStyle,
-                  ),
-                  Text(
-                    'lbs',
-                    style: unitTextStyle,
-                  ),
-                ],
-              ),
+              children: <Widget>[
+                Text(
+                  body,
+                  style: labelTextStyle,
+                ),
+                Text(
+                  weight,
+                  style: weightTextStyle,
+                ),
+                Text(
+                  'lbs',
+                  style: unitTextStyle,
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
-}
+  // void _doSomething() {
+  //   setState(() {
+  //     body  = 'Core';
+  //   });
+  }
+// }
 
