@@ -1,26 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-// import 'package:metrics_widget/assets/graph.svg';
 import 'package:metrics_widget/styles/styles.dart';
 
 const String assetName = 'assets/graph.svg';
 
-
-// class Metrics extends StatefulWidget {
-//
-//   const Metrics({Key? key}) : super(key: key);
-//
-//   @override
-//   _MetricsState createState() => _MetricsState();
-// }
-//
-// class _MetricsState extends State<Metrics> {
-//
-//   var body = 'Upper Body';
-//   var weight = '45';
-
 class Metrics extends StatelessWidget {
 
+  // body and weight variables passed in from parent widget
   final String body;
   final String weight;
 
@@ -29,10 +15,13 @@ class Metrics extends StatelessWidget {
   @override
   Widget build(BuildContext context ) {
     return Container(
+      // import widget styling choices from style document
       height: bubbleDiameter.toDouble(),
       width: bubbleDiameter.toDouble(),
       decoration: bubbleBoxDecoration,
       padding: new EdgeInsets.fromLTRB(0, 35, 0, 0),
+      // stack the text elements on top of the background
+      // pattern supplied by graph.svg
       child: Stack(
         children: <Widget>[
           Positioned(
@@ -43,16 +32,20 @@ class Metrics extends StatelessWidget {
           ),
           Center(
             child: Column(
-
               children: <Widget>[
+                // pass in a string for the body label,
+                // style it according to styles.dart
                 Text(
                   body,
                   style: labelTextStyle,
                 ),
+                // pass in a string for the weight label,
+                // style it according to styles.dart
                 Text(
                   weight,
                   style: weightTextStyle,
                 ),
+                // lbs label doesn't change, styled by styles.dart
                 Text(
                   'lbs',
                   style: unitTextStyle,
@@ -64,10 +57,6 @@ class Metrics extends StatelessWidget {
       ),
     );
   }
-  // void _doSomething() {
-  //   setState(() {
-  //     body  = 'Core';
-  //   });
-  }
+}
 // }
 
