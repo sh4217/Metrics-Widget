@@ -46,23 +46,19 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Metrics(body, weight),
 
-          // TextButton(
-          //   child: Text(
-          //     'why'
-          //   ),
-          //   onPressed: () {
-          //     setState(() {
-          //       body = 'Core';
-          //     });
-          //   },
-          // ),
-
             const SizedBox(
               height: 50,
             ),
 
-            TextField(
-              controller: bodyController,
+            Padding(
+              padding: EdgeInsets.only(left: 100, right: 100),
+              child: TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                    hintText: 'Enter body part',
+                ),
+                controller: bodyController,
+              ),
             ),
 
             TextButton(
@@ -80,8 +76,15 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 50,
             ),
 
-            TextField(
-              controller: weightController,
+            Padding(
+              padding: EdgeInsets.only(left: 100, right: 100),
+              child: TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: 'Enter weight',
+                ),
+                controller: weightController,
+              ),
             ),
 
             TextButton(
