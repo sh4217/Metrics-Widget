@@ -16,6 +16,6 @@ Enter a new body part in the first text field and click update to change the bod
 
 <img width="463" alt="Update Body" src="https://user-images.githubusercontent.com/11973105/140810998-306b4160-e121-4bfc-8c69-1e1f1a6618fc.png">
 
-Enter a new weight in the second text field and click updat to change the weight label in the widget.
+Enter a new weight in the second text field and click update to change the weight label in the widget.
 
 <img width="455" alt="Update Weight" src="https://user-images.githubusercontent.com/11973105/140811559-aad33d5e-4c97-42d0-bb13-d189f5f6b69d.png">
