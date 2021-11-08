@@ -20,8 +20,10 @@ class Metrics extends StatelessWidget {
       width: bubbleDiameter.toDouble(),
       decoration: bubbleBoxDecoration,
       padding: new EdgeInsets.fromLTRB(0, 35, 0, 0),
-      // stack the text elements on top of the background
-      // pattern supplied by graph.svg
+      /*
+      stack the text elements on top of the background
+      pattern supplied by graph.svg
+      */
       child: Stack(
         children: <Widget>[
           Positioned(
@@ -33,14 +35,18 @@ class Metrics extends StatelessWidget {
           Center(
             child: Column(
               children: <Widget>[
-                // pass in a string for the body label,
-                // style it according to styles.dart
+                /*
+                pass in a string for the body label, style
+                it according to styles.dart
+                */
                 Text(
                   body,
                   style: labelTextStyle,
                 ),
-                // pass in a string for the weight label,
-                // style it according to styles.dart
+                /*
+                pass in a string for the weight label, style
+                it according to styles.dart
+                */
                 Text(
                   weight,
                   style: weightTextStyle,

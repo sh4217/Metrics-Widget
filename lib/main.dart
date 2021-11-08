@@ -48,8 +48,10 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Metrics(body, weight),
-            // use invisible sized boxes to put spacing in between
-            // elements while still preserving vertical column centering
+            /*
+            use invisible sized boxes to put spacing in between
+            elements while still preserving vertical column centering
+            */
             const SizedBox(
               height: 50,
             ),
@@ -61,8 +63,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   border: OutlineInputBorder(),
                     hintText: 'Enter body part',
                 ),
-                // bodyController makes text available in this field
-                // available to be called
+                /*
+                bodyController makes the text entered in this field
+                available to be called
+                */
                 controller: bodyController,
               ),
             ),
@@ -71,8 +75,11 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text(
                 'Update body part'
               ),
-              // when the update button is pressed, it reloads the
-              // metrics widget with a new value for body
+              /*
+              when the update button is pressed, it reloads the
+              metrics widget with a new value for body
+              */
+
               onPressed: () {
                 setState(() {
                   body = bodyController.text;
@@ -91,8 +98,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   border: OutlineInputBorder(),
                   hintText: 'Enter weight',
                 ),
-                // weightController makes the text entered in this
-                // field able to be called
+                /*
+                weightController makes the text entered in this
+                field able to be called
+                */
                 controller: weightController,
               ),
             ),
@@ -101,8 +110,10 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text(
                   'Update weight'
               ),
-              // when this button is pressed, the metrics widget
-              // will be reloaded with a new value for weight
+              /*
+              when this button is pressed, the metrics widget
+              will be reloaded with a new value for weight
+              */
               onPressed: () {
                 setState(() {
                   weight = weightController.text;
